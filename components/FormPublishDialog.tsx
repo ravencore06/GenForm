@@ -19,7 +19,7 @@ type Props = {
 };
 
 const FormPublishDialog: React.FC<Props> = ({ formId, open, onOpenChange }) => {
-    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+    const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://genform-8x4o.onrender.com/"
 
     const copyClipboard = () => {
       const link = `${BASE_URL}/forms/${formId}`;
