@@ -5,6 +5,12 @@ In the digital age, creating forms should be quick, smart, and intuitive. Enter 
 
 ---
 
+---
+🔗 **Live Website**: [https://genform-8x4o.onrender.com/](https://genform-8x4o.onrender.com/)  
+📂 **GitHub Repository**: [github.com/Amansingh0807/GenForm](https://github.com/Amansingh0807/GenForm)
+
+---
+
 ## ✨ Key Features
 
 1. **🤖 AI-Driven Form Generation**  
@@ -78,7 +84,7 @@ In the digital age, creating forms should be quick, smart, and intuitive. Enter 
 ## 📷 Screenshots
 
 Check out the interface:  
-![Screenshot](https://drive.google.com/file/d/1Tj6GSB7AgsqkcVb5aYsIvAbmpKZjJ5tA/view?usp=drive_link)
+![Screenshot](https://github.com/Amansingh0807/GenForm/blob/master/public/Screenshot%202025-06-17%20154052.png)
 
 ---
 
@@ -103,8 +109,11 @@ This project is licensed under the MIT License. 📄
 ---
 
 ## 📬 Contact
+For queries, support, or collaborations, feel free to reach out:
 
-For queries or support, feel free to reach out:  
+📧 Email: amansingh080704@gmail.com
+
+💼 LinkedIn: linkedin.com/in/amansingh08
 - **GitHub Issues**: Open an issue in the repository 🐛  
 
 ---
