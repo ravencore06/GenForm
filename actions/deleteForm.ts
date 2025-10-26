@@ -3,10 +3,10 @@
 import prisma from "@/lib/prisma"
 import { revalidatePath } from "next/cache";
 
-export const deleteForm = async (formId:number) => {
+export const deleteForm = async (formUuid:string) => {
     const form = await prisma.form.delete({
         where:{
-            id:formId
+            uuid:formUuid
         }
     });
 

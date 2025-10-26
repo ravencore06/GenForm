@@ -13,7 +13,7 @@ import { Button } from "./ui/button";
 import toast from "react-hot-toast";
 
 type Props = {
-  formId: number;
+  formId: string;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };

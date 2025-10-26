@@ -30,7 +30,7 @@ const FormEditorWrapper: React.FC<Props> = ({ form }) => {
 
   const handleSave = async (formData: FormData) => {
     try {
-      const result = await updateForm(form.id, formData);
+      const result = await updateForm(form.uuid, formData);
       
       if (result.success) {
         toast.success(result.message);
@@ -57,7 +57,7 @@ const FormEditorWrapper: React.FC<Props> = ({ form }) => {
             Back to Forms
           </Button>
           <FormPublishButton 
-            formId={form.id}
+            formId={form.uuid}
             isPublished={form.published}
             variant="default"
           />

@@ -11,6 +11,7 @@ export type Content = {
 }
 export type Form = {
     id:number;
+    uuid:string;
     ownerId:string;
     published:boolean;
     content:Content;

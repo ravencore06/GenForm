@@ -9,9 +9,20 @@ const Submisions = async ({
 }) => {
   const formId = (await params).formId;
 
+  // First find the form by UUID to get its internal ID
+  const form = await prisma.form.findUnique({
+    where: {
+      uuid: formId,
+    },
+  });
+
+  if (!form) {
+    return <h1>Form not found</h1>;
+  }
+
   const submissions = await prisma.submissions.findMany({
     where: {
-      formId: Number(formId),
+      formId: form.id,
     },
     include: {
       form: true,

@@ -24,8 +24,8 @@ type Props = {
 const FormList: React.FC<Props> = ({ form }) => {
   const router = useRouter();
 
-  const deleteFormHandler = async (formId:number) => {
-      const data = await deleteForm(formId);
+  const deleteFormHandler = async (formUuid:string) => {
+      const data = await deleteForm(formUuid);
 
       if(data.success){
         toast.success(data.message);
@@ -45,7 +45,7 @@ const FormList: React.FC<Props> = ({ form }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Link href={`/dashboard/forms/${form.id}/submissions`}>
+        <Link href={`/dashboard/forms/${form.uuid}/submissions`}>
           <Button variant={"link"} className="text-blue-600 p-0">
             Submission - {form.submissions}
           </Button>
@@ -56,19 +56,19 @@ const FormList: React.FC<Props> = ({ form }) => {
           <Button
             variant="outline"
             className="w-full sm:w-auto flex-1"
-            onClick={() => router.push(`/dashboard/forms/edit/${form.id}`)}
+            onClick={() => router.push(`/dashboard/forms/edit/${form.uuid}`)}
           >
             <Edit2 className="w-4 h-4 mr-2" /> Edit
           </Button>
           <FormPublishButton 
-            formId={form.id}
+            formId={form.uuid}
             isPublished={form.published}
             variant="default"
             className="w-full sm:w-auto flex-1"
           />
         </div>
         <Button
-          onClick={() => deleteFormHandler(form.id)}
+          onClick={() => deleteFormHandler(form.uuid)}
           variant={"destructive"}
           className="w-full sm:w-auto"
         >

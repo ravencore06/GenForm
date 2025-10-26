@@ -18,7 +18,7 @@ const Edit = async ({ params }: { params: Promise<{ formId: string }> }) => {
 
   const form : any = await prisma.form.findUnique({
     where: {
-      id: Number(formId),
+      uuid: formId,
     },
   });
 

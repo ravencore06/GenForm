@@ -9,9 +9,9 @@ const SubmitForm = async ({ params }: { params: Promise<{ formId: string }> }) =
   if (!formId) {
     return <h1>No form id found for id {formId}</h1>;
   }
-  const form : any = await prisma.form.findUnique({
+  const form : any = await prisma.form.findFirst({
     where: {
-      id: Number(formId),
+      uuid: formId,
     },
   });
   return (

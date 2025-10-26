@@ -22,13 +22,13 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
   const handlePublish = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isEditMode) {
-      await publishForm(form.id);
+      await publishForm(form.uuid);
       setSuccessDialogOpen(true);
     }
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const data = await submitForm(form.id, formData);
+    const data = await submitForm(form.uuid, formData);
 
     if(data?.success){
       toast.success(data.message);
@@ -67,7 +67,7 @@ const AiGeneratedForm: React.FC<Props> = ({ form, isEditMode }) => {
         <Button type="submit">{isEditMode ? "Publish" : "Submit"}</Button>
       </form>
       <FormPublishDialog
-        formId={form.id}
+        formId={form.uuid}
         open={successDialogOpen}
         onOpenChange={setSuccessDialogOpen}
       />

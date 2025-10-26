@@ -10,6 +10,7 @@ datasource db {
 
 model Form {
   id              Int           @id @default(autoincrement())
+  uuid            String        @unique @default(uuid())
   ownerId         String
   createdAt       DateTime      @default(now())
   published       Boolean       @default(false)

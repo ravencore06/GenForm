@@ -24,7 +24,7 @@ import toast from "react-hot-toast";
 import FormPublishDialog from "./FormPublishDialog";
 
 type Props = {
-  formId: number;
+  formId: string;
   isPublished: boolean;
   variant?: "default" | "outline" | "secondary" | "ghost" | "link" | "destructive";
   className?: string;

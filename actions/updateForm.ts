@@ -17,7 +17,7 @@ type FormData = {
   }>;
 };
 
-export const updateForm = async (formId: number, formData: FormData) => {
+export const updateForm = async (formUuid: string, formData: FormData) => {
   try {
     const user = await currentUser();
     if (!user) {
@@ -27,7 +27,7 @@ export const updateForm = async (formId: number, formData: FormData) => {
     // Check if the form exists and belongs to the user
     const existingForm = await prisma.form.findUnique({
       where: {
-        id: formId,
+        uuid: formUuid,
       },
     });
 
@@ -55,14 +55,14 @@ export const updateForm = async (formId: number, formData: FormData) => {
     // Update the form
     const updatedForm = await prisma.form.update({
       where: {
-        id: formId,
+        uuid: formUuid,
       },
       data: {
         content: JSON.stringify(cleanedFormData),
       },
     });
 
-    revalidatePath(`/dashboard/forms/edit/${formId}`);
+    revalidatePath(`/dashboard/forms/edit/${formUuid}`);
     revalidatePath('/dashboard/forms');
 
     return {

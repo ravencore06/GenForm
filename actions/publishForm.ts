@@ -2,19 +2,19 @@
 import prisma from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server"
 
-export const publishForm = async (formId:number) => {
+export const publishForm = async (formUuid:string) => {
     try {
         const user = await currentUser();
         if(!user){
             return {success:false, message:"User not found"}
         }
-        if(!formId){
+        if(!formUuid){
             return {success:false, message:"Form is not found"}
         }
 
         const form = await prisma.form.findUnique({
             where:{
-                id:formId
+                uuid:formUuid
             }
         });
         if(!form){
@@ -25,12 +25,13 @@ export const publishForm = async (formId:number) => {
         }
         await prisma.form.update({
             where:{
-                id:formId
+                uuid:formUuid
             },
             data:{
                 published:true,
             }
         });
+        return {success:true, message:"Form published successfully"}
     } catch (error) {
         console.log("Error publishing form", error);
         return {success:false, message:"An error occured while publishing the form"}
