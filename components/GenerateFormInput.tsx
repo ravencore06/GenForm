@@ -41,7 +41,7 @@ const GenerateFormInput: React.FC<Props> = ({ text, totalForms, isSubscribed }) 
     if (state.success) {
      
       toast(state.message);
-      router.push(`/dashboard/forms/edit/${state.data.id}`);
+      router.push(`/dashboard/forms/edit/${state.data.uuid}`);
     } else if (state.message) {
       toast.error(state.message);
     }
