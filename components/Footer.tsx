@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Heart, Sparkles, Zap, Github, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -25,8 +26,10 @@ const Footer = () => {
               <div className="relative flex items-center gap-3 bg-white dark:bg-gray-900 px-6 py-4 rounded-2xl">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl blur-md opacity-50"></div>
-                  <div className="relative w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-2xl">G</span>
+                  <div className="relative w-12 h-12  rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-2xl">
+                      <Image src="/genform.png" alt="GenForm Logo" width={48} height={48} priority /> 
+                    </span>
                   </div>
                 </div>
                 <h3 className="text-3xl font-black bg-gradient-to-r from-green-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent">
