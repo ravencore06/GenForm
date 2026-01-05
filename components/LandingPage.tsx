@@ -8,7 +8,7 @@ import Footer from "./Footer";
 
 interface LandingPageProps {
   userId?: string | null;
-}[[]]
+}
 
 const LandingPage = ({ userId }: LandingPageProps) => {
   return (
