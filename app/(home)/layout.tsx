@@ -17,20 +17,40 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
         {/* Navbar  */}
         <nav className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4">
           <Logo />
-          
-          {/* Desktop Nav */}
+
+          {/* Center Navigation Links */}
+          <div className="hidden md:flex items-center gap-1 mx-auto bg-muted/20 border border-white/5 backdrop-blur-md rounded-full px-1 py-1">
+            <Link href="#home" className="text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-full transition-colors">
+              Home
+            </Link>
+            <Link href="#features" className="text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-full transition-colors">
+              Features
+            </Link>
+            <Link href="#testimonials" className="text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-full transition-colors">
+              Testimonials
+            </Link>
+            <Link href="#faqs" className="text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-full transition-colors">
+              FAQs
+            </Link>
+            <Link href="#pricing" className="text-sm font-medium px-4 py-2 hover:bg-white/5 rounded-full transition-colors">
+              Pricing
+            </Link>
+          </div>
+
+          {/* Desktop Nav - Right Side CTAs */}
           <div className="hidden md:flex items-center gap-2">
+            <DarkMode />
             {user ? (
               <>
-                <Link href={"/dashboard/analytics"}>
-                  <Button variant={"link"}>Dashboard</Button>
+                <Link href="/dashboard/analytics">
+                  <Button variant="link">Dashboard</Button>
                 </Link>
                 <UserButton afterSignOutUrl="/" />
               </>
             ) : (
               <>
-                <Link href={"/sign-in"}>
-                  <Button variant={"ghost"}>Sign In</Button>
+                <Link href="/sign-in">
+                  <Button variant="ghost">Sign In</Button>
                 </Link>
                 <Link href="/sign-up">
                   <Button className="bg-green-500 hover:bg-green-600 text-white">
@@ -39,7 +59,6 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
                 </Link>
               </>
             )}
-            <DarkMode />
           </div>
 
           {/* Mobile Nav */}
